@@ -1,20 +1,19 @@
 clear; clc
 tic;
-%%%%%%%%%%%%%%%%%%%
+
 % DIRECTORIES
-SACSMADSdir = 'C:/Users/warnold/Box/CC-Data-Cloud/data_SAC-SMA-DS/repo/';
-outputLocation = 'C:/Users/warnold/Box/CC-Data-Cloud/data_SAC-SMA-DS/Paleo_SJR/Paleo_Jitter_MonotonicTemp/';
-climateData = 'C:/Users/warnold/Box/CC-Data-Cloud/data_paleoCoupling/processed/paleo_sjr_analogue_sim_ccvs/';
+outputLocation = './processed';
+climateData = 'C:\Users\warnold\Box\CC-Data-Cloud\data_paleo\processed\paleo_sac_1_3SD_analogue_sim_ccvs\';
 climatePrefix = 'data_';
 
 % RUN CONFIG
-run_type = 'watershed_specific'; % choice of 'watershed_specific' or 'callite'
+run_type = 'callite'; % choice of 'watershed_specific' or 'callite'
 outputDailyAvgHydroPlot = false;
 outputDailyHydroSequence = true;
 outputDailyFlowsOnly = false;
-set_to_run = '11ObsInflows'; %choice of '9Unimpaired','11ObsInflows','12RimInflows'
-siteStart = 5;
-siteEnd = 5;
+set_to_run = '12RimInflows'; %choice of '9Unimpaired','11ObsInflows','12RimInflows'
+siteStart = 1;
+siteEnd = 12;
 
 % Leap year output
 leap = true; % only for daily watershed specific outputs
@@ -24,7 +23,7 @@ endYr = 2011;
 % Temperature Perturbations
 distributedTemp = false;
 T_rangeStart = 1;
-T_rangeEnd = 1;
+T_rangeEnd = 9;
 T_change = [0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0];
 T_change_label = {'0_0','0_5','1_0','1_5','2_0','2_5','3_0','3_5','4_0'};
 %T_change = [0, 1.0, 2.0, 3.0, 4.0];
@@ -32,10 +31,14 @@ T_change_label = {'0_0','0_5','1_0','1_5','2_0','2_5','3_0','3_5','4_0'};
 T_distributed_sensitivity = [0.116,0.116,0.265,0.265,0.265,0.1915,0.1915,0.1915,0.0435,0.0435,0.0435,0.116];
 
 % Precipitation Perturbations
-P_rangeStart = 2;
-P_rangeEnd = 2;
+P_rangeStart = 1;
+P_rangeEnd = 7;
 P_change = [0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3];
 P_change_label = {'0_7','0_8','0_9','1_0','1_1','1_2','1_3'};
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%SCRIPT%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
 
 % SAC-SMA-DS Initial State
 inistate = [0 0 5 5 5 0];
@@ -79,10 +82,6 @@ secondLine = ['/CALLITE/I_FOLSM/FLOW-INFLOW//1MON/2020D09E/,',...
     '/CALLITE/I_YUBA/FLOW-INFLOW//1MON/2020D09E/,'...
     '/CALLITE/I_WKYTN/FLOW-INFLOW//1MON/2020D09E/'];
 thirdLine = 'CFS,TAF,TAF,CFS,CFS,TAF,CFS,TAF,CFS,CFS,CFS,CFS';
-
-% SET SAC-SMA-DS WORKING PATH FOR MODULE & PARAMETER REFERENCE
-p = genpath(SACSMADSdir);
-addpath(p)
 
 % LABEL FOR WARMING TYPE
 if distributedTemp == true
