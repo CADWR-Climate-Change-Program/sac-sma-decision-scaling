@@ -1,7 +1,7 @@
 # SAC-SMA-DS Overview
 SAC-SMA (Burnash et al. 1973), is a lumped conceptual hydrological model employed by the National Weather Service (NWS) of the National Oceanic and Atmospheric Administration (NOAA) to produce river and flash flood forecasts for the United States (Burnash 1995; McEnery et al. 2005). It was coupled with a river routing model (Lohmann et al. 1998) for application to the large, distributed CVS watershed system (consisting of approximately one thousand 1/8th degree grid cells). The coupled model is hereafter referred to as SAC-SMA-DS (Wi & Brown 2013), distinguishing it from the distributed version of SAC-SMA previously developed by NWS. SAC-SMA-DS has been applied to a number of case studies (e.g., Koren et al. 2004; Smith et al. 2004). SAC-SMA-DS (Figure 1) is composed of hydrologic process modules that represent soil moisture accounting, potential evapotranspiration (Hamon 1961), snow processes (Anderson 1976), and flow routing, and operates in grid formulation on a daily time-step.
 
-![Figure 1. SAC-SMA Modules][docs/sac-sma-schematic.png]
+![Figure 1. SAC-SMA Modules](docs/sac-sma-schematic.PNG)
 
 The SAC-SMA-DS hydrologic model is used to simulate streamflow at 32 locations throughout the CVS watershed. As shown in Figure 2, these 32 streamflow simulations include:
 
@@ -11,7 +11,7 @@ The SAC-SMA-DS hydrologic model is used to simulate streamflow at 32 locations t
 
 - **Calibration Set III**: 9 subbasin inflows that account for a substantial portion of the rain in the system and represent “unimpaired inflows,” as they are the modeling results of estimating the runoff that would have occurred had water flow remained unaltered in rivers and streams instead of stored in reservoirs, imported, exported, or diverted (Bay-Delta Office 2007).
 
-![Figure 2. Maps of Three Calibration Sets For the Application of SAC-SMA-DS for Inflows to the Sacramento San-Joaquin Delta][docs/sac-sma-ds-streamflows-calibration.png]
+![Figure 2. Maps of Three Calibration Sets For the Application of SAC-SMA-DS for Inflows to the Sacramento San-Joaquin Delta](docs/sac-sma-ds-streamflows-calibration.png)
 
 # Run Instructions
 Use the `batch-scripts/SAC_SMA_DS_All.m` to run user-selected sets of streamflows.
