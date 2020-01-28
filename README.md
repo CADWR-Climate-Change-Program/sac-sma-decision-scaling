@@ -3,7 +3,8 @@ SAC-SMA (Burnash et al. 1973), is a lumped conceptual hydrological model employe
 
 ![Figure 1. SAC-SMA Modules](docs/sac-sma-schematic.PNG)
 
-The SAC-SMA-DS hydrologic model is used to simulate streamflow at 32 locations throughout the CVS watershed. As shown in Figure 2, these 32 streamflow simulations include:
+# SAC-SMA-DS Application to Central Valley Water System
+The SAC-SMA-DS hydrologic model is used to simulate streamflow at 32 locations throughout the Central Valley water system watersheds. As shown in Figure 2, these 32 streamflow simulations include:
 
 - **Calibration Set I**: 12 rim inflows to major reservoirs throughout the area contributing runoff to the Sacramento-San Joaquin Delta.
 
